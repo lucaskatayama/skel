@@ -1,0 +1,25 @@
+{
+  "parser" : "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6" : true,
+    "jest": true
+  },
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "plugins": [ "import" ],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.babel.js"
+      }
+    }
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error", {"devDependencies": ["**/*.test.*"]}]
+    }
+}
