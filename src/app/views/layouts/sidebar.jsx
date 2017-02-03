@@ -1,5 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router';
+const MyLink = ({ onClick, href, isActive, label, icon }) => (
 
+  <li className={isActive ? 'active treeview' : 'treeview'}>
+    <a href={href} onClick={onClick}>
+      <i className={`fa ${icon}`} /><span>{label}</span>
+    </a>
+  </li>
+);
+
+const MenuLink = ({ to, label, icon }) => (
+  <Link to={to}>{params => <MyLink label={label} icon={icon} {...params} />}</Link>
+);
 const Sidebar = () => (
   <aside className="main-sidebar">
     <section className="sidebar">
